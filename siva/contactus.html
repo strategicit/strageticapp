@@ -1,0 +1,1233 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="shortcut icon" href="images/menu_icon.png"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
+<link rel="stylesheet" type="text/css" href="CSS/css/cstyle.css" />
+<link rel="stylesheet" type="text/css" href="CSS/css/style.css" />
+<link rel="stylesheet" type="text/css" href="CSS/css/selectbox.css" />
+<link rel="stylesheet" type="text/css" href="js/LightBox/jquery.lightbox-0.5.css" />
+    <script type="text/javascript" src='js/jquery.js'></script>
+    <script type="text/javascript" src='js/LightBox/jquery.js'></script>
+    <script type="text/javascript" src='js/LightBox/jquery.lightbox-0.5.js'></script>
+    <script type="text/javascript" src='js/jquery.cycle.all.2.72.js'></script>
+    <script type="text/javascript" src='js/jquery.selectbox-0.5.js'></script>
+    
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var hnd = document.getElementById('ctl00_hdn_SCName1');
+            if (hnd.value) {
+                $(function () {
+                    $('#gallery a').lightBox();
+                });
+            }
+        });
+    </script>
+    
+        <script type="text/javascript">
+
+            /*@cc_on@*/
+
+        </script>
+        <script type="text/javascript">
+
+            function MM_swapImgRestore() { //v3.0
+                var i, x, a = document.MM_sr; for (i = 0; a && i < a.length && (x = a[i]) && x.oSrc; i++) x.src = x.oSrc;
+            }
+            function MM_preloadImages() {
+                //alert("called");  //v3.0
+                onload1();
+                onload2();
+                //onload3();
+                var d = document; if (d.images) {
+                    if (!d.MM_p) d.MM_p = new Array();
+                    var i, j = d.MM_p.length, a = MM_preloadImages.arguments; for (i = 0; i < a.length; i++)
+                        if (a[i].indexOf("#") != 0) { d.MM_p[j] = new Image; d.MM_p[j++].src = a[i]; }
+                }
+            }
+
+            function MM_findObj(n, d) { //v4.01
+                var p, i, x; if (!d) d = document; if ((p = n.indexOf("?")) > 0 && parent.frames.length) {
+                    d = parent.frames[n.substring(p + 1)].document; n = n.substring(0, p);
+                }
+                if (!(x = d[n]) && d.all) x = d.all[n]; for (i = 0; !x && i < d.forms.length; i++) x = d.forms[i][n];
+                for (i = 0; !x && d.layers && i < d.layers.length; i++) x = MM_findObj(n, d.layers[i].document);
+                if (!x && d.getElementById) x = d.getElementById(n); return x;
+            }
+
+            function MM_swapImage() { //v3.0
+                var i, j = 0, x, a = MM_swapImage.arguments; document.MM_sr = new Array; for (i = 0; i < (a.length - 2); i += 3)
+                    if ((x = MM_findObj(a[i])) != null) { document.MM_sr[j++] = x; if (!x.oSrc) x.oSrc = x.src; x.src = a[i + 2]; }
+            }
+
+
+            function onload1() {
+
+                $('.fadeOut').css("outline", "#090 0px solid");
+                $('.fadeOut').click(function () {
+                    if ($(this).val() == $(this).attr("default")) {
+                        $(this).val("");blog
+                    }
+
+                });
+                $('.fadeOut').blur(function () {
+                    if ($(this).val() == "") {
+                        $(this).val($(this).attr("default"));
+                    }
+                });
+
+                function initdrpdown(target, dest) {
+                    $("#" + target).hover(function () {
+                        $('#' + dest).show();
+                    }, function () {
+                        $('#' + dest).hide();
+                    });
+
+
+                    $('#' + dest).hover(function () {
+                        //alert("called");
+                        $('#' + dest).show();
+                        if (target == 'services')
+                            MM_swapImage('Image7', '', 'images/menu_ms_02.png', 1);
+                        else if (target == 'aboutus')
+                            MM_swapImage('Image8', '', 'images/menu_ms_01.png', 1);
+                        else if (target == 'resources')
+                            MM_swapImage('Image5', '', 'images/menu_ms_04.png', 1);
+                        else if (target == 'industry')
+                            MM_swapImage('Image6', '', 'images/menu_ms_03.png', 1);
+                    }, function () {
+                        $('#' + dest).hide(); MM_swapImgRestore()
+                    });
+                }
+
+                initdrpdown('services', 'services_drpdwn');
+                initdrpdown('aboutus', 'aboutus_drpdwn');
+                initdrpdown('resources', 'resources_drpdwn');
+                initdrpdown('industry', 'industry_drpdwn');//$('#Items').selectbox();
+
+
+            }
+
+            //        $(document).ready(function () {
+            function onload2() {
+                $('div#bannerslider').cycle({
+                    fx: 'scrollHorz',
+                    timeout: 8000,
+                    prev: '#left',
+                    next: '#right'
+                });
+
+                $('div#slider').cycle({
+                    fx: 'scrollVert',
+                    timeout: 4000,
+                    prev: '#down',
+                    next: '#up'
+                });
+                $('div#SuccessSlider').cycle({
+                    fx: 'scrollVert',
+                    timeout: 4000,
+                    prev: '#Sdown',
+                    next: '#Sup'
+                });
+            }
+       
+	
+        </script>
+<script type="text/javascript">
+    function ChangeAddress() {
+        var pAddr = document.getElementsByTagName("p");
+        for (var i = 0; i < pAddr.length; i++) {
+            if (pAddr[i].id != "")
+                document.getElementById(pAddr[i].id).style.display = 'none';
+        }
+
+        document.getElementById('p' + document.getElementById('Items').value).style.display = '';
+    }
+</script>    
+    <script type="text/javascript" src='fancybox/jquery.mousewheel-3.0.4.pack.js'></script>
+    <script type="text/javascript" src='fancybox/jquery.fancybox-1.3.4.pack.js'></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="fancybox/jquery.fancybox-1.3.4.css" />
+    <title>Strategic IT Corp Solutions | Resource Outsourcing | Software Development | Web Developement | Product Development</title><div id="fb-root"></div>
+    
+                        <script>                            (function (d, s, id) {
+                                var js, fjs = d.getElementsByTagName(s)[0];
+                                if (d.getElementById(id)) return;
+                                js = d.createElement(s); js.id = id;
+                                js.src = "connect.facebook.net/en_US/all.js#xfbml=1";
+                                fjs.parentNode.insertBefore(js, fjs);
+                            } (document, 'script', 'facebook-jssdk'));</script>
+                            
+    </head>
+
+
+
+<body onload="MM_preloadImages('images/menu_ms_05.html','images/menu_ms_04.png','images/menu_ms_03.png','images/menu_ms_02.png','images/menu_ms_01.png','images/arrow_left_ms.png','images/arrow_right_ms.png','images/login_button_ms.png')"
+    style="background-color: #f1f1f1;">
+    <script>        !function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = "platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } } (document, "script", "twitter-wjs");</script>
+    <script src="platform.linkedin.com/in.js" type="text/javascript"></script>
+    <form name="aspnetForm" method="post" action="" id="aspnetForm">
+
+<div style="border: 0px solid black; background-color: #ff5a00;" class="containerMain">
+        
+        <div class="container" style="border: 0px solid aqua; height: 30px;">
+            <div>
+                <div style="border: 0px solid red;" id="logopart">
+                    <div style="border: 0px solid blue; margin-left: 14px;" id="topmost">
+                         
+                        <p style="font-family: Arial; font-size: 13px; font-weight: normal; color: White;">
+                            <a class="TextD" style="font-family: Arial; font-size: 13px; font-weight: normal;
+                                color: White;" href="company_profile.html">About Strategic</a>
+                            | <a class="TextD" style="font-family: Arial; font-size: 13px; font-weight: normal;
+                                color: White;" href="job_search.html">Careers</a>
+								| <a class="TextD" style="font-family: Arial; font-size: 13px; font-weight: normal;
+                                color: White;" href="sitemap.html">Sitemap</a>
+								 | <a class="TextD"
+                                    style="font-family: Arial; font-size: 13px; font-weight: normal; color: White;"
+                                    href="contactus.html">Contact Us</a>
+                        </p>
+                        <a href="index.html">
+                            <img src="Themes_App/Frontend/images/home_button.png" alt="" style="float: right;
+                                margin-top: 6px; margin-right: 15px;" /></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="containerInner" style="border: 0px solid blue;">
+        <div style="height: 101px; border: 0px solid black;">
+
+            <div style="border: 0px solid blue; float: left; height: 100%; padding-left: 20px;"
+                id="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="" style="float: left;
+                        margin-top: 5px;" /></a>
+            </div>
+             
+             
+
+            <div style="width: 705px; float: right">
+                <div style="border: 0px solid black; height: 60px; width: 600px; float: right;" align="right">
+                    <div style="border: 0px solid black; height: 30px; width: 600px; float: left;">
+                    </div>
+                    
+                </div>
+                <div style="border: 0px solid red; height: 26px; width: 705px; float: right; margin-top: 0px;">
+                    <div id="menu1" style="border: 0px solid black;">
+                        <div id="industry_drpdwn">
+                            <div id="industry_menumask">
+                            </div>
+                            
+                            
+                            <ul id="two">
+                                <h3>
+                                    <img src="images/menu_icon.png" class="icon_menu" alt="" />
+                                    <span class="menutitle">
+                                        
+                                        <a href=''>Business Solutions</a>
+                                    </span>
+                                </h3>
+                                <li><a href='product_concept.html'>Product Concept</a></li>
+								<li><a href='product_design.html'>Product Design</a></li>
+								<li><a href='software_development_methodology.html'>Software Development Methodology</a></li>
+								<li><a href='product_engineering.html'>Product Engineering/Development</a></li>
+								<li><a href='maintenance_support.html'>Maintenance & Support</a></li>
+								<li><a href='professional_services.html'>Professional Services</a></li>
+                                
+                            </ul>
+                        </div>
+                        <div id="resources_drpdwn">
+                            <div id="resources_menumask">
+                                <ul id="one">
+                                    <h3>
+                                        <img src="images/menu_icon.png" class="icon_menu" alt="" /><span
+                                            class="menutitle" style="width: 102px;">
+                                            <a href=''>Careers</a>
+                                        </span>
+                                    </h3>
+                                    <li><a href='job_search.html'>Job Search</a></li>
+									<li><a href='job_positions.html'>Job Positions</a></li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                        <div id="services_drpdwn">
+                            <div id="services_menumask">
+                            </div>
+                            <ul id="one">
+                                <h3>
+                                    <img src="images/menu_icon.png" class="icon_menu" alt="" /><span
+                                        class="menutitle">
+                                        <a href='service_offerings.html'>Services Offering</a>
+                                    </span>
+                                </h3>
+                                <li><a href="application_development.html">Application Development</a></li>
+								<li><a href="application_management.html">Application Management</a></li>
+								<li><a href="software_development.html">Software Development </a></li>
+								<li><a href="bpo_kpo_services.html">BPO/KPO Services</a></li>
+								<li><a href="bi_datawarehousing.html">BI/Datawarehousing</a></li>
+								<li><a href="erp_crm_implementation.html">ERP/CRM Implementation</a></li>
+								<li><a href="portal_content_management.html">Portal & Content Management</a></li>
+                                
+                            </ul>
+                            <ul id="two">
+                                <h3>
+                                    <img src="images/menu_icon.png" class="icon_menu" alt="" /><span
+                                        class="menutitle">
+                                        <a href=''>Solutions</a>
+                                    </span>
+                                </h3>
+                                <li><a href="ecommerce_solution.html">ECommerce Solution</a></li>
+								<li><a href="web_development.html">Web Development</a></li>
+								<li><a href="erp.html">ERP</a></li>
+								<li><a href="banking.html">Banking</a></li>
+								<li><a href="php_application_development.html">PHP Application Development</a></li>
+								<li><a href="resource_outsourcing.html">Resource Outsourcing</a></li>
+								<li><a href="product_development.html">Product Development</a></li>
+								<li><a href="testing.html">Testing</a></li>
+
+                            </ul>
+                            <ul id="three" style="width: 220px;">
+                                <h3>
+                                    <img src="images/menu_icon.png" class="icon_menu" alt="" /><span
+                                        class="menutitle">
+                                        <a href='technology.html'>Technology</a>
+                                    </span>
+                                </h3>
+                                <li><a href="microsoft.html">Microsoft</a></li>
+								<li><a href="sharepoint.html">Sharepoint</a></li>
+								<li><a href="business_intelligence.html">Business Intelligence</a></li>
+								<li><a href="lamp.html">LAMP</a></li>
+								<li><a href="crm.html">CRM</a></li>
+								<li><a href="web_enterprise_content_mgmt.html">Web & Enterprise Content Mgmt.</a></li>
+                                
+                            </ul>
+                        </div>
+                        <div id="aboutus_drpdwn">
+                            <div id="aboutus_menumask">
+                                <ul id="one">
+                                    <h3>
+                                        <img src="images/menu_icon.png" class="icon_menu" alt="" /><span
+                                            class="menutitle">
+                                            <a href=''>Strategic IT Corp</a></span></h3>
+                                    <li><a href="why_strategic_it_corp.html">Why Strategic IT Corp</a></li>
+									<li><a href="company_profile.html">Company Profile</a></li>
+									<li><a href="company_highlights.html">Company Highlights</a></li>
+									<li><a href="director_message.html">Director Message</a></li>
+									<li><a href="our_skill.html">Our Skill</a></li>
+									<li><a href="differentiator.html">Differentiator</a></li>
+									<li><a href="partner_strategic.html">Partner-Strategic</a></li>
+									<li><a href="development_methodology.html">Development Methodology</li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <ul class="menubar">
+                            <li><a href="industry_verticals.html" class="menuitem">Industry Verticals</a></li>
+                            <li id="resources"><a href="" class="menuitem">Careers</a></li>
+                            <li id="industry"><a href="" class="menuitem">Product Lifecycle</a></li>
+                            <li id="services"><a href="" class="menuitem">What We Do?</a></li>
+                            <li id="aboutus"><a href="" class="menuitem">Company</a></li>
+							<li><a href="index.html" class="menuitem">Home</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="height: 184px; width: 100%; border: 0px solid aqua;">
+            <div style="background-image: url(images/banner-left-shadow.jpg);
+                margin-left: 0px; margin-right: 0px; height: 184px; width: 20px; border: 0px solid black;
+                float: left;">
+            </div>
+            <div style="height: 184px; width: 980px; border: 0px solid green; float: left;">
+                <img id="BnnerImage" src='images/banner/contact.jpg' height="184"
+                    width="1030" alt="" title="" />
+            </div>
+            <div style="background-image: url(images/banner-right-shadow.jpg);
+                height: 184px; width: 20px; border: 0px solid black; float: right;">
+            </div>
+        </div>
+    </div>
+    
+    
+    
+
+  
+
+
+<div>
+    <input type="hidden" name="ctl00$ContentPlaceHolder1$hdnSectionID" id="ctl00_ContentPlaceHolder1_hdnSectionID" value="51" />
+    
+</div>
+
+<div id="wrapper_inner">
+    <div class="containerInner">
+        <div style="border:0px solid red;" id="inner_left">
+            <div style="height:100%;  width:1000px;border:0px solid red; margin-left:20px; float:left;">
+                
+                <div style="width:685px; height:100%; border:0px solid black; float:left;">
+                    <h1 style="margin-bottom: 0">Contact Us</h1>
+                    <div style="width: 100%; color: #535252; line-height: 20px; display: inline-table;
+                        clear: both; margin: 0 0 10px 0; overflow: hidden;">
+                            <div style="border:0px solid red;">
+                                <div id="ctl00_ContentPlaceHolder1_pnldatalist">
+	
+                                    <table cellspacing="5" cellpadding="5" border="0" width="720px" style="border-width:0px;" id="ctl00_ContentPlaceHolder1_dlContactUs">
+		<tbody><tr>
+			<td valign="top" width="350">
+			<h3>Bangalore</h3>
+				<p>
+				<strong>Strategic IT Corp Solutions Pvt Ltd</strong><br />
+				#229,2nd Floor, Prestige Omega<br />
+				No. 104 EPIP Zone, Whitefield<br />
+				Bangalore, Karnataka-560066<br />
+				India.<br />
+				<strong>Phone</strong>: 080-6571 1711<br />
+ 				<strong>Fax</strong>: 080-4060-0700<br />
+ 				<strong>E-mail</strong>: info@sitcs.net</p>
+			</td>
+			<td rowspan="3" valign="top">
+			<table border="0" cellspacing="0" cellpadding="0" width="320" class="tab">
+                                    <tr>
+                                      <td width="208" valign="top">
+									  <h3>E-mail Aliases</h3>
+									  <p><strong>Strategic IT Corp Solutions&nbsp;</strong><br />
+                                          Please send general inquires to:<br />
+                                          <a href="info@sitcs.net">info@sitcs.net</a> <br />
+                                          <strong>Requests for Proposal</strong><strong><br />
+                                          </strong>Please send Requests for Proposal (RFP) inquires to:<br />
+                                          <a href="mailto:rfp@sitcs.netn">rfp@sitcs.net</a> <br />
+                                          <strong>Product Support</strong><strong><br />
+                                          </strong><a href="mailto:support@sitcs.net%20">support@sitcs.net </a> <br />
+                                          <strong>Careers</strong><strong><br />
+                                          </strong>Please send your resume to:<br />
+                                          <a href="mailto:careers@sitcs.net%20">careers@sitcs.net </a> <br />
+                                          <strong>Media</strong><strong><br />
+                                          </strong>Please send media inquiries to:<br />
+                                          <a href="media@sitcs.net%20">media@sitcs.net</a> <br />
+                                          <strong>Webmaster</strong><strong><br />
+                                          </strong>Please send your suggestions and feedback to:<br />
+                                      <a href="webmaster@sitcs.net">webmaster@sitcs.net</a> </p></td>
+                                    </tr>
+                                  </table>
+			</td>
+		</tr><tr>
+			<td valign="top">
+			<h3>Ahmedabad</h3> 
+			<p>
+			<strong>Strategic IT Corp Solutions Pvt Ltd</strong><br />
+			11-103, GCP Centre<br />
+			Vijay Char Rasta<br />
+			Memnagar, Ahmedabad<br />
+			Gujrat-380014<br />
+			India.<br />
+			<strong>Phone</strong>: +91-79 61344979<br />
+			<strong>E-mail</strong>: info_ahm@sitcs.net</p>
+			</td>
+		</tr><tr>
+			<td valign="top">
+			<h3>Cochin</h3>
+			<p>
+			<strong>Strategic IT Corp Solutions Pvt Ltd</strong><br />
+			GS2 Heavenly Plaza <br />
+			No. 297, Kakkanad,<br /> 
+			Cochin.<br />
+			India - 682021<br />
+			<strong>Phone</strong>: 0484-2388113<br />
+			<strong>E-mail</strong>: info_cochin@sitcs.net</p>
+			</td>
+		</tr>
+	</tbody></table>
+                            
+                                    
+                                
+</div>
+                            </div>
+                 
+                        </div>
+
+                    <div style="width:100%; height:20px; float:left; border:0px solid green;">
+                    </div>
+
+                    
+
+                                
+                    
+
+                        
+
+                </div>
+
+                <div style="border:0px solid blue; width:270px; margin-right:10px;margin-top:32px; float:right; ">
+                    
+
+
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        $('div#slider').cycle({
+            fx: 'scrollVert',
+            timeout: 6000,
+            prev: '#down',
+            next: '#up'
+        });
+
+        $('div#slider1').cycle({
+            fx: 'scrollVert',
+            timeout: 6000
+        });
+    });
+	
+</script>
+
+<div id="inner_right">
+    
+    <script type="text/javascript">
+        //document.getElementById("RFIDIv").style.display = "none";
+        function OnTabClick(id) {
+            var contact = document.getElementById("ContactMe");
+            var RFI = document.getElementById("RFI");
+            var Telephone = document.getElementById("Telephone");
+            var ContactDiv = document.getElementById("ContactDiv");
+            var RFIDIv = document.getElementById("RFIDiv");
+            var TelephoneDiv = document.getElementById("TelephoneDiv");
+
+            if (id == 1) {
+                //alert("c1");
+                //RFIDiv.style.display = "block";
+                document.getElementById("RFIDiv").className = "DisplayClass";
+                document.getElementById("ContactDiv").className = "NoneClass";
+                document.getElementById("TelephoneDiv").className = "NoneClass";
+
+                document.getElementById("RFI").className = "SelectedDiv";
+                document.getElementById("Telephone").className = "OtherDiv";
+                document.getElementById("ContactMe").className = "OtherDiv";
+
+
+            }
+
+            if (id == 2) {
+                //alert("c2");
+                document.getElementById("TelephoneDiv").className = "DisplayClass";
+                document.getElementById("ContactDiv").className = "NoneClass";
+                document.getElementById("RFIDiv").className = "NoneClass";
+
+                document.getElementById("Telephone").className = "SelectedDiv";
+                document.getElementById("ContactMe").className = "OtherDiv";
+                document.getElementById("RFI").className = "OtherDiv";
+
+            }
+
+            if (id == 0) {
+                document.getElementById("ContactDiv").className = "DisplayClass";
+                document.getElementById("RFIDiv").className = "NoneClass";
+                document.getElementById("TelephoneDiv").className = "NoneClass";
+
+                document.getElementById("Telephone").className = "OtherDiv";
+                document.getElementById("RFI").className = "OtherDiv";
+                document.getElementById("ContactMe").className = "SelectedDiv";
+
+            }
+        }
+
+        function ShowContactpopup() {
+            $find('ctl00_ContentPlaceHolder1_right_ModalPopupExtender1').show();
+        }
+
+        function CloseContactpopup() {
+            $find("ctl00_ContentPlaceHolder1_right_ModalPopupExtender1").hide();
+        }
+
+
+        function ShowReadMorepopup(discription, position, company) {
+            document.getElementById('ctl00_ContentPlaceHolder1_right_Discrptionpopuplbl').innerHTML = discription.split('^').join(' ').split('`').join("'");
+            document.getElementById('ctl00_ContentPlaceHolder1_right_Positionpopuplbl').innerHTML = position.split('^').join(' ');
+            document.getElementById('ctl00_ContentPlaceHolder1_right_Companypopuplbl').innerHTML = company.split('^').join(' ');
+            $find("ctl00_ContentPlaceHolder1_right_PopupReadmore").show();
+        }
+
+        function CloseReadMorepopup() {
+            $find("ctl00_ContentPlaceHolder1_right_PopupReadmore").hide();
+        }
+
+        function CloseResumepopup() {
+            $find("ctl00_ContentPlaceHolder1_right_ResumePopup").hide();
+            var resume = document.getElementById('resumeframe');
+            resume.src = '';
+        }
+
+        function ShowResumepopup() {
+
+            $find("ctl00_ContentPlaceHolder1_right_ResumePopup").show();
+        }
+
+    </script>
+    
+    <div style="" id="ctl00_ContentPlaceHolder1_right_about_listup">
+        <div style="min-height: 50px;" id="about_list">
+            <h3>
+                <span id="ctl00_ContentPlaceHolder1_right_lbl_head">Make an Enquiry</span>
+            </h3>
+            <table cellspacing="3" cellpadding="3" border="0" align="center" width="235" style="background-color:#ffffff; border:1px solid #cdcdcd; padding:5px; margin-left:5px;">
+<tbody>
+<tr><td height="10" colspan="2"></td></tr>
+<tr>
+	<td width="130"><b>Name </b>:&nbsp;</td></tr>
+	<tr><td><input type="text" id="txtCName" name="txtCName" size="25" style="width:215px;"></td>
+</tr>
+<tr><td height="10" colspan="2"></td></tr>
+<tr>
+	<td><b>Email </b>:&nbsp;</td></tr>
+	<tr><td><input type="text" id="txtEmail" name="txtEmail" size="25" style="width:215px;"></td>
+</tr>
+<tr><td height="10" colspan="2"></td></tr>
+<tr>
+	<td><b>Phone </b>:&nbsp;</td></tr>
+	<tr><td><input type="text" id="txtPhone" name="txtPhone" style="width:215px;"></td>
+</tr>
+<tr><td height="10" colspan="2"></td></tr>
+<tr>
+	<td><b>Comments </b>:&nbsp;</td></tr>
+	<tr><td><textarea id="txtComments" name="txtComments" rows="3" cols="20"></textarea></td>
+</tr>
+<tr><td height="10" colspan="2"></td></tr>
+<tr>
+<td><b>Upload Resume </b>:&nbsp;</td></tr>
+<tr><td><input type="file" name="" style="width:215px;"></td>
+</tr>
+<tr><td height="10" colspan="2"></td></tr>
+<tr>
+	<td height="5px"></td></tr>
+	<tr><td valign="bottom"><input type="image" src="images/submit.png"></td>
+</tr></tbody></table>
+        </div>
+        
+    </div>
+    <div class="employee_speak"> 
+    <h3 style="margin-bottom: 0">Client Speak</h3>
+         <div id="slider">
+         <div style='height:160px;'><p style='margin:15px 15px 0 15px; color:#3e3e3e;'>
+		 <img  src='images/quote_start.png' alt='' style='margin-right:10px;' />I would like to take this opportunity to thank everyone at Strategic IT Corp for the development and launch of Pepsico Vendor and<span style='font-size:14px; font-weight:bold;'>...</span><img src='images/quote_end.png' alt=''/></p><p style='margin:10px; color:#3e3e3e; height:30px;'>-<b><i>By !!!!! By George Thomas</i></b></p>
+		 <a href="testimonials.html" class="readmore">Read More</a></div>
+		 
+		 <div style='height:160px;'><p style='margin:15px 15px 0 15px; color:#3e3e3e;'>
+		 <img  src='images/quote_start.png' alt='' style='margin-right:10px;' />Strategic IT Corp designed, developed and maintained our custom built web application. We have tried many other companies and they.<span style='font-size:14px; font-weight:bold;'>...</span><img src='images/quote_end.png' alt=''/></p><p style='margin:10px; color:#3e3e3e; height:30px;'>-<b><i>!!!!!!   Allas Kuos</i></b></p>
+		 <a href="testimonials.html" class="readmore">Read More</a></div>
+		 
+		 <div style='height:160px;'><p style='margin:15px 15px 0 15px; color:#3e3e3e;'>
+		 <img  src='images/quote_start.png' alt='' style='margin-right:10px;' />'I am very satisfied with the work of Strategic IT Corp. They provided quick turn-around for a very fair price. We look forward to continuing<span style='font-size:14px; font-weight:bold;'>...</span><img src='images/quote_end.png' alt=''/></p><p style='margin:10px; color:#3e3e3e; height:30px;'>-<b><i>By !!!!!   Peter Smith</i></b></p>
+		 <a href="testimonials.html" class="readmore">Read More</a></div>
+		 
+		 <div style='height:160px;'><p style='margin:15px 15px 0 15px; color:#3e3e3e;'>
+		 <img  src='images/quote_start.png' alt='' style='margin-right:10px;' />Strategic IT Corp was very responsive and flexible in building our websites.  We were extremely pleased with their results.<span style='font-size:14px; font-weight:bold;'>...</span><img src='images/quote_end.png' alt=''/></p><p style='margin:10px; color:#3e3e3e; height:30px;'>-<b><i>By !!!!!   Alex</i></b></p>
+		 <a href="testimonials.html" class="readmore">Read More</a></div>
+		 
+		 <div style='height:160px;'><p style='margin:15px 15px 0 15px; color:#3e3e3e;'>
+		 <img  src='images/quote_start.png' alt='' style='margin-right:10px;' />"It was a pleasure working with the Strategic IT Corp Team. They came through for us when we needed them the most and they<span style='font-size:14px; font-weight:bold;'>...</span><img src='images/quote_end.png' alt=''/></p><p style='margin:10px; color:#3e3e3e; height:30px;'>-<b><i>By !!!!!   Wilson Roy</i></b></p>
+		 <a href="testimonials.html" class="readmore">Read More</a></div>
+		 
+		 <div style='height:160px;'><p style='margin:15px 15px 0 15px; color:#3e3e3e;'>
+		 <img  src='images/quote_start.png' alt='' style='margin-right:10px;' />Our experiences with Sanjay (Strategic IT Corp) have been great, he delivers projects on time, well tested and at a reasonable price.<span style='font-size:14px; font-weight:bold;'>...</span><img src='images/quote_end.png' alt=''/></p><p style='margin:10px; color:#3e3e3e; height:30px;'>-<b><i>By !!!!!   Arora Singh</i></b></p>
+		 <a href="testimonials.html" class="readmore">Read More</a></div>
+		 
+         </div>
+         <div class="arrow">
+             <a style=" cursor:pointer;"><img src="images/news_arrow_down.png" alt="" style="float:right;" id="up" /></a>
+             <a style=" cursor:pointer;"><img src="images/news_arrow_up.png" alt="" style="float:right; margin-right:8px;" id="down"/></a>
+         </div>
+</div>
+    
+    
+    
+    
+    
+</div>
+<input type="submit" style="display: none;" id="ctl00_ContentPlaceHolder1_right_Button1" value="" name="ctl00$ContentPlaceHolder1$right$Button1">
+
+<div style="display: none; position: fixed; z-index: 100001;" id="ctl00_ContentPlaceHolder1_right_Panel1">
+	
+    <div>
+        <div class="cpopupdiv">
+            <div style="position: relative" class="cpopup">
+                <span class="spopcloser" style="float: right; margin-right: 5px; padding-top: 5px; cursor: pointer;"><a onclick="javascript:CloseContactpopup();return false;">
+                        <img alt="Close" src="">
+                    </a></span>
+                <h2 style="padding: 10px; color: #666;">
+                    Contact Us</h2>
+                <br>
+                <div style="padding-left: 50px;">
+                    <iframe width="630" scrolling="no" height="550" frameborder="0" src="" id="Iframe1"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<input type="submit" style="display: none;" id="ctl00_ContentPlaceHolder1_right_PopReadmoreBtn" value="" name="ctl00$ContentPlaceHolder1$right$PopReadmoreBtn">
+
+<div style="display: none; position: fixed; z-index: 100001;" id="ctl00_ContentPlaceHolder1_right_PanelReadMore">
+	
+    <div class="popupdiv">
+        <table cellspacing="0" cellpadding="0" style="margin: auto; width: 710px; height: 100;
+            padding-top: 250px;">
+            <tbody><tr>
+                <td style="height: 25px; width: 20px">
+                </td>
+                <td>
+                </td>
+                <td>
+                    <a onclick="javascript:CloseReadMorepopup();return false;" style="cursor: pointer;">
+                        </a>
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 0px; margin: 0px; background-image: url('');
+                    background-repeat: repeat-y;">
+                </td>
+                <td style="background-color: #FFFFFF; width: 680px;">
+                    <p style="margin-top: 0px; text-align: justify; margin-bottom: 0;">
+                        </p><p style="margin-left: 10px; text-align: justify; margin-right: 10px; line-height: 18px;
+                            font-size: 12px; margin-top: 0;">
+                            "
+                            <span id="ctl00_ContentPlaceHolder1_right_Discrptionpopuplbl"></span>
+                            "
+                        </p>
+                        <p>
+                        </p>
+                        <p style="text-align: right; margin: 10px 10px 0 0; font-size: 12px; margin-bottom: 0;">
+                            <strong>-
+                                <span id="ctl00_ContentPlaceHolder1_right_Positionpopuplbl"></span>
+                            </strong>
+                            <br>
+                            <span id="ctl00_ContentPlaceHolder1_right_Companypopuplbl"></span>
+                        </p>
+                        <br>
+                    <p></p>
+                </td>
+                <td style="background-image: url('');
+                    background-repeat: repeat-y; background-position: right">
+                </td>
+            </tr>
+            <tr>
+                <td style="background-position: left bottom; padding: 0px; margin: 0px; background-image: url('');
+                    background-repeat: no-repeat; height: 25px; background-attachment: scroll;">
+                </td>
+                <td style="background-image: url('');
+                    background-repeat: repeat-x; background-attachment: scroll; background-position: bottom">
+                </td>
+                <td style="background-image: url('');
+                    background-repeat: no-repeat; background-position: right bottom">
+                </td>
+            </tr>
+        </tbody></table>
+    </div>
+
+</div>
+
+
+<div style="display: none; position: fixed; z-index: 100001;" id="ctl00_ContentPlaceHolder1_right_Panel_catfifthlevel">
+	
+    <div class="popupdiv">
+        <table cellspacing="0" cellpadding="0" style="margin: auto; width: 710px; height: 100;
+            padding-top: 250px;">
+            <tbody><tr>
+                <td style="background-image: url('');
+                    background-repeat: no-repeat; height: 25px; width: 20px">
+                </td>
+                <td style="background-image: url('');
+                    background-repeat: repeat-x">
+                </td>
+                <td>
+                    <a onclick="javascript:fifthlevelpopclose();return false;" style="cursor: pointer;">
+                        <img alt="Close" src=""></a>
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 0px; margin: 0px; background-image: url('');
+                    background-repeat: repeat-y;">
+                </td>
+                <td style="background-color: #FFFFFF; width: 680px;">
+                    <table cellspacing="0" cellpadding="0" border="0">
+                        <tbody><tr>
+                            <td>
+                                <div>
+                                    <p style="margin: 10px 0 10px 20px; text-align: justify; font-weight: bold; font-size: 15px;
+                                        color: #535252;">
+                                        <span id="ctl00_ContentPlaceHolder1_right_lbl_popuphead"></span>
+                                    </p>
+                                </div>
+                                <div style="margin-left: 20px; margin-bottom: 20px; text-align: justify; margin-right: 10px;
+                                    line-height: 18px; font-size: 12px; color: #535252;">
+                                    <span id="ctl00_ContentPlaceHolder1_right_lbl_popupdata">data</span>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody></table>
+                </td>
+                <td style="background-image: url('');
+                    background-repeat: repeat-y; background-position: right">
+                </td>
+            </tr>
+            <tr>
+                <td style="background-position: left bottom; padding: 0px; margin: 0px; background-image: url('');
+                    background-repeat: no-repeat; height: 25px; background-attachment: scroll;">
+                </td>
+                <td style="background-image: url('');
+                    background-repeat: repeat-x; background-attachment: scroll; background-position: bottom">
+                </td>
+                <td style="background-image: url('');
+                    background-repeat: no-repeat; background-position: right bottom">
+                </td>
+            </tr>
+        </tbody></table>
+    </div>
+
+</div>
+
+<input type="submit" style="display: none;" id="ctl00_ContentPlaceHolder1_right_ResumepopupBtn" value="" name="ctl00$ContentPlaceHolder1$right$ResumepopupBtn">
+
+<div style="display: none; position: fixed; z-index: 100001;" id="ctl00_ContentPlaceHolder1_right_PanelResume">
+	
+    <div>
+        <div class="spopupdiv">
+            <div class="spopup">
+                <span class="spopcloser" style="float: right; margin-right: 5px; padding-top: 5px; cursor: pointer;"><a onclick="javascript:CloseResumepopup();return false;">
+                        <img alt="Close" src="">
+                    </a></span>
+                <h2 style="padding: 10px; color: #666;">
+                    Submit Resume</h2>
+                <br>
+                <div style="padding-left: 50px;">
+                    <iframe width="630" scrolling="no" height="500" frameborder="0" src="" id="resumeframe"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+<script type="text/javascript">
+    function fifthlevelclick(id) {
+        document.getElementById('ctl00_ContentPlaceHolder1_right_lbl_popuphead').innerHTML = document.getElementById('hidtit' + id).value;
+        document.getElementById('ctl00_ContentPlaceHolder1_right_lbl_popupdata').innerHTML = document.getElementById('hid' + id).value;
+        $find('ctl00_ContentPlaceHolder1_right_MPE_catfifthlevel').show();
+    }
+    function fifthlevelpopclose() {
+        $find('ctl00_ContentPlaceHolder1_right_MPE_catfifthlevel').hide();
+    }
+</script>
+
+                <div id="ctl00_ContentPlaceHolder1_right_ModalPopupExtender1_backgroundElement" style="display: none; position: fixed; left: 0px; top: 0px; z-index: 10000;" class="modalBackground"></div><div id="ctl00_ContentPlaceHolder1_right_PopupReadmore_backgroundElement" style="display: none; position: fixed; left: 0px; top: 0px; z-index: 10000;" class="modalBackground"></div><div id="ctl00_ContentPlaceHolder1_right_MPE_catfifthlevel_backgroundElement" style="display: none; position: fixed; left: 0px; top: 0px; z-index: 10000;" class="modalBackground"></div><div id="ctl00_ContentPlaceHolder1_right_ResumePopup_backgroundElement" style="display: none; position: fixed; left: 0px; top: 0px; z-index: 10000;" class="modalBackground"></div></div>
+            </div>
+         </div>
+    </div>
+</div>
+    
+
+    
+    
+    <div id="footer" style="">
+        <div class="containerMain" style="border: 0px solid green;">
+            <div style="border: 0px solid red; width: 100%; height: 175px; padding-top: 0px;
+                font-size: 11px;">
+                <div style="border: 0px solid red; padding-left: 45px; background-color: White;"
+                    id="sitemap">
+                    <div id="sitemap_icon">
+                        <img src="Themes_App/Frontend/images/sitemap_icon.png" style="height: 26px;
+                            background-repeat: no-repeat;" />
+                    </div>
+                    <ul>
+                        <li>
+                            <img src="images/footer_list_img.png" alt="" style="float: left;
+                                padding-right: 10px; margin-top: 6px;" /><p style="float: left;">
+                                    <a class="TextD" href="index.html">Home</a></p>
+                        </li>
+                        <li>
+                            <img src="images/footer_list_img.png" alt="" style="float: left;
+                                padding-right: 10px; margin-top: 6px;" /><p style="float: left;">
+                                    <a class="TextD" href="company_profile.html">Company</a></p>
+                        </li>
+                        <li>
+                            <img src="images/footer_list_img.png" alt="" style="float: left;
+                                padding-right: 10px; margin-top: 6px;" /><p style="float: left;">
+                                    <a class="TextD" href="ecommerce_solution.html">Solutions</a></p>
+                        </li>
+                        <li>
+                            <img src="images/footer_list_img.png" alt="" style="float: left;
+                                padding-right: 10px; margin-top: 6px;" /><p style="float: left;">
+                                    <a class="TextD" href="microsoft.html">Technology</a></p>
+                        </li>
+                        <li>
+                            <img src="images/footer_list_img.png" alt="" style="float: left;
+                                padding-right: 10px; margin-top: 6px;" /><p style="float: left;">
+                                    <a class="TextD" href="application_development.html">Services Offering</a></p>
+                        </li>
+                        <li>
+                            <img src="images/footer_list_img.png" alt="" style="float: left;
+                                padding-right: 10px; margin-top: 6px;" /><p style="float: left;">
+                                    <a class="TextD" href="job_search.html">Careers</a></p>
+                        </li>
+                        <li>
+                            <img src="images/footer_list_img.png" alt="" style="float: left;
+                                padding-right: 10px; margin-top: 6px;" /><p style="float: left;">
+                                    <a class="TextD" href="testimonials.html">Testimonials</a></p>
+                        </li>
+						<li>
+                            <img src="images/footer_list_img.png" alt="" style="float: left;
+                                padding-right: 10px; margin-top: 6px;" /><p style="float: left;">
+                                    <a class="TextD" href="sitemap.html">Sitemap</a></p>
+                        </li>
+                    </ul>
+                </div>
+                <div id="offices" style="border: 0px solid blue; padding-left: 10px; background-color: White;">
+                    <div id="offices_icon">
+                        <img src="Themes_App/Frontend/images/offices_icon.png" style="height: 26px;
+                            background-repeat: no-repeat;" />
+                    </div>
+                    <div id="combo_box">
+                        
+                        
+                        <select name='Items' id='Items' onchange="javascript:ChangeAddress();" class="selectbox">
+                            <option value='Bangalore'>Bangalore</option><option  value='Ahmedabad'>Ahmedabad</option><option  value='Cochin'>Cochin</option>
+                        </select>
+                    </div>
+                    <p style='float:left; margin-top:5px; line-height:18px; color:#3b3b3b;' class='add_options' id='pBangalore'>
+					#229,2nd Floor, Prestige Omega<br />
+No. 104 EPIP Zone, Whitefield<br />
+Bangalore, Karnataka-560066, India.<br />
+Phone: 080-6571 1711<br />
+Fax: 080-4060-0700<br />
+E-mail: info@sitcs.net
+					</p>
+                    <p style='float:left; margin-top:5px; line-height:18px; display:none; color:#3b3b3b;' class='add_options' id='pAhmedabad'>
+					11-103, GCP Centre<br />
+Vijay Char Rasta<br />
+Memnagar, Ahmedabad<br />
+Gujrat-380014,India.<br />
+Phone: +91-79 61344979<br />
+E-mail: info-ahm@sitcs.net
+					</p>
+					<p style='float:left; margin-top:5px; line-height:18px; display:none; color:#3b3b3b;' class='add_options' id='pCochin'>
+					GS2 Heavenly Plaza<br />
+No. 297, Kakkanad,<br />
+Cochin.<br />
+India - 682021<br />
+Phone: 0484-2388113<br />
+E-mail: info-cochin@sitcs.net
+					</p>
+					                 
+                </div>
+                <div id="downloads" style="border: 0px solid red; padding-left: 20px; width:350px; background-color: White;">
+                    <div id="downloads_icon">
+                        <img src="Themes_App/Frontend/images/downloads_icon.png" height="26" />
+                    </div>
+                    <div style="float: left; border: 0px solid blue; padding-top: 10px; padding-left: 15px;
+                        width: 330px;">
+                        <div style="height: 20px; float: left;">
+                            <p style="float: left; border: 0px solid red; width: 330px;">
+                                
+                                    Strategic IT Corp has set very aggressive and consolidated task of joining forces with software developers, software marketing companies. We invite software marketing companies to sell our software solutions.
+
+Software marketing companies, online, trade leads portal, business directories, business newsgroups moderators, business service providers (relating to our software prospects) etc can join our affiliate marketing network. Why Should One Join Our affiliate Program... <a href="partner_strategic.html">Read More</a></p>
+<table width="130" border="0" cellspacing="0" cellpadding="0">
+  <tr><td>&nbsp;</td></tr>
+  <tr>
+    <td><strong>Follow Us:</strong></td>
+    <td><a href="https://www.facebook.com/pages/Strategic-It-Corp-Solutions-Pvt-Ltd/532173833503268" target="_blank"><img src="images/facebook.png" /></a></td>
+    <td><a href="https://twitter.com/strategicitcorp" target="_blank"><img src="images/twitter.png" /></a></td>
+    <td><a href="http://www.linkedin.com/profile/view?id=270452981&trk=nav_responsive_tab_profile" target="_blank"><img src="images/linkedin.png" /></a></td>
+  </tr>
+</table>
+
+                        </div>
+                        
+                        
+                    </div>
+                    
+                </div>
+                
+                
+                
+                <div style="padding-bottom: 0px; border: 0px solid blue; background-color: White;
+                    width: 1070px;" align="right">
+                    
+                    <div style="width: 230px; margin-right: 10px;" align="right">
+                        <div style="float: left">
+                            <script type="IN/Share"></script>
+                        </div>
+                        
+                        <div class="fb-like" data-send="false" data-layout="button_count" data-width="40"
+                            data-show-faces="false" style="float: left; margin-left: 10px;">
+                        </div>
+                        
+                    </div>
+                    <div style="height: 10px; float: left; border: 0px solid black; width: 100%;">
+                    </div>
+                    <div style="padding-bottom: 10px; border: 0px solid blue; width: 1070px;" align="center">
+                        <img id="Img1" src="Themes_App/Frontend/images/footer_bottom_bg.png"
+                            height="4" width="980" alt="" />
+                    </div>
+                    <div style="padding-bottom: 0px; border: 0px solid blue; width: 980px; padding-left: 45px;
+                        padding-right: 45px; color: #535353;" align="left">
+                        <div style="width: 100%; float: none; background-color: #ff5a00; text-align: center;
+                            padding-top: 3px; padding-bottom: 3px; color: #ffffff;">
+                            <a class="clovergroup" style="color: #ffffff;" href="development_methodology.html">
+                                Development Methodology</a>
+								&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a style="color: #ffffff;" class="clovergroup" href="resource_outsourcing.html">
+                                Resource Outsourcing</a>
+								&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a class="clovergroup" href="business_intelligence.html"
+                                    style="color: #ffffff;">Business Intelligence</a>
+									&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a class="clovergroup" href="industry_verticals.html"
+                                    style="color: #ffffff;">Industry Verticals</a>
+									&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a class="clovergroup" href="product_concept.html"
+                                    style="color: #ffffff;">Product Lifecycle</a>
+									&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a class="clovergroup" href="partner_strategic.html"
+                                    style="color: #ffffff;">Partner Strategic</a>
+									&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a class="clovergroup" href="privacy_policy.html"
+                                    style="color: #ffffff;">Privacy Policy</a>
+									&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a class="clovergroup" href="feedback.html"
+                                    style="color: #ffffff;">Feedback</a>
+									
+                        </div>
+                        <p style="margin-top: 5px; text-align:center">
+                            &copy; Strategic IT Corp Solutions Pvt. Ltd.
+                        </p>
+                          
+                    </div>
+                    <div style="height: 10px; float: left; border: 0px solid black; background-color: White;
+                        width: 100%;">
+                    </div>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+    
+     <script type="text/javascript">
+         $(".loginbutton").click(function () {
+             $(this).attr("src", "images/login_button_ms.png");
+             $(".login_dropdown").fadeIn();
+         });
+
+         function openPopUp() {
+             $find('ctl00_PopupReadmore').show();
+         }
+         function closePopUp() {
+             $find('ctl00_PopupReadmore').hide();
+         }
+         function openimagepopup(img) {
+             document.getElementById('imp').src = '' + img;
+             $find('ctl00_ModalPopupExtender1').show();
+         }
+         function closeimage() {
+             $find('ctl00_ModalPopupExtender1').hide();
+         }
+
+</script>
+    <div id="ctl00_ReadMoreUpdatePane">
+	
+                <input type="submit" name="ctl00$PopReadmoreBtn" value="" id="ctl00_PopReadmoreBtn" style="display: none;" />
+                
+			    <div id="ctl00_PanelReadMore" style="display: none">
+		    
+                     <div class="popupdiv">
+                        
+                         <table cellpadding="0" cellspacing="0" style="margin:auto; width:710px; height:100; padding-top: 0px;">
+                         <tr>
+                             <td style="background-image: url('images/Popup-Imgs/top-left-corner.png'); background-repeat: no-repeat; height: 25px; width:20px"></td>
+                             <td style="background-image: url('images/Popup-Imgs/top-mid.png'); background-repeat: repeat-x"  ></td>
+                             <td >
+                                <a style="cursor:pointer;" onclick="javascript:closePopUp();return false;" ><img src="images/Popup-Imgs/top-right-corner-close.png" alt="Close" /></a>
+                            </td>
+                        </tr>
+
+                         <tr>
+                            <td style="padding: 0px; margin: 0px; background-image: url('images/Popup-Imgs/left-mid.png'); background-repeat: repeat-y;"></td>
+                            <td style="background-color: #FFFFFF; width:680px;" valign="top" align="center">
+                               
+                                   
+                                      
+                                    
+                                    <iframe  src="(A(EwikrQmzzgEkAAAAZmE3MzczYWItN2MwMC00ZjNmLThiODEtMzhmNDRlOGZmYzdh5h-sVs6QijOXL5SMXiLyZTqV21g1))/YouTube_Vedio.html" scrolling="no" height="500" width="580" frameborder="0"></iframe>
+                                   
+                                  
+                               
+                            </td>
+                            <td style="background-image: url('images/Popup-Imgs/right-mid.png'); background-repeat: repeat-y; background-position: right"></td>
+                         </tr>
+
+                        <tr>
+                             <td style="background-position: left bottom; padding: 0px; margin: 0px; background-image: url('images/Popup-Imgs/bottom-left-corner.png'); background-repeat: no-repeat; height: 25px; background-attachment: scroll;"></td>
+                            <td style="background-image: url('images/Popup-Imgs/bottom-mid.png'); background-repeat: repeat-x; background-attachment: scroll; background-position: bottom"></td>
+                            <td style="background-image: url('images/Popup-Imgs/bottom-right-corner.png'); background-repeat: no-repeat; background-position: right bottom"></td>
+                        </tr>        
+                        </table>            
+                    </div>
+                
+	</div>
+                 
+</div>
+
+<div id="ctl00_UpdatePanel1">
+	
+                <input type="submit" name="ctl00$Button1" value="" id="ctl00_Button1" style="display: none;" />
+                
+			    <div id="ctl00_Panel1" style="display: none">
+		    
+                     <div class="popupdiv">
+                        <table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" >
+                            <tr valign="middle">
+                                <td>
+        
+                                <table cellpadding="0" cellspacing="0" style="margin:auto;">
+                         <tr>
+                             <td style="background-image: url('images/Popup-Imgs/top-left-corner.png'); background-repeat: no-repeat; height: 25px; width:20px"></td>
+                             <td style="background-image: url('images/Popup-Imgs/top-mid.png'); background-repeat: repeat-x"  ></td>
+                             <td>
+                                <a style="cursor:pointer;" onclick="javascript:closeimage();" ><img src="images/Popup-Imgs/top-right-corner-close.png" alt="Close" /></a>
+                            </td>
+                        </tr>
+
+                         <tr>
+                            <td style="padding: 0px; margin: 0px; background-image: url('images/Popup-Imgs/left-mid.png'); background-repeat: repeat-y;width:38px;"></td>
+                            <td style="background-color: #FFFFFF; " align="center">
+                                <p style="margin-top:0px; text-align: justify; margin-bottom: 0;">
+                               
+                                    
+                                    </p>
+                                    <p style="text-align: right; margin: 10px 10px 0 10px ; font-size: 12px; margin-bottom: 0;">
+                                      
+                                    
+                                    <img ID="imp"  />
+                                    </p>
+                                    <br />
+                                </p>
+                            </td>
+                            <td style="background-image: url('images/Popup-Imgs/right-mid.png'); background-repeat: repeat-y; background-position: right"></td>
+                         </tr>
+
+                        <tr>
+                             <td style="background-position: left bottom; padding: 0px; margin: 0px; background-image: url('images/Popup-Imgs/bottom-left-corner.png'); background-repeat: no-repeat; height: 25px; background-attachment: scroll;"></td>
+                            <td style="background-image: url('images/Popup-Imgs/bottom-mid.png'); background-repeat: repeat-x; background-attachment: scroll;height:38px; background-position: bottom"></td>
+                            <td style="background-image: url('images/Popup-Imgs/bottom-right-corner.png'); background-repeat: no-repeat; background-position: right bottom"></td>
+                        </tr>        
+                        </table>            
+
+                                </td>
+                            </tr>
+                         </table>
+                    </div>
+                
+	</div>
+                 
+</div>
+    
+
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.add_init(function() {
+    $create(AjaxControlToolkit.ModalPopupBehavior, {"BackgroundCssClass":"modalBackground","Drag":true,"PopupControlID":"ctl00_ContentPlaceHolder1_Speak1_PanelReadMore","dynamicServicePath":"/Career/life-at-clover.aspx","id":"ctl00_ContentPlaceHolder1_Speak1_PopupReadmore"}, null, null, $get("ctl00_ContentPlaceHolder1_Speak1_PopReadmoreBtn"));
+});
+Sys.Application.add_init(function() {
+    $create(AjaxControlToolkit.ModalPopupBehavior, {"BackgroundCssClass":"modalBackground","Drag":true,"PopupControlID":"ctl00_ContentPlaceHolder1_Panel1_Panel1","dynamicServicePath":"/Career/life-at-clover.aspx","id":"ctl00_ContentPlaceHolder1_Panel1_ModalPopupExtender1"}, null, null, $get("ctl00_ContentPlaceHolder1_Panel1_Button1"));
+});
+Sys.Application.add_init(function() {
+    $create(AjaxControlToolkit.ModalPopupBehavior, {"BackgroundCssClass":"modalBackground","Drag":true,"PopupControlID":"ctl00_ContentPlaceHolder1_Panel1_PanelReadMore","dynamicServicePath":"/Career/life-at-clover.aspx","id":"ctl00_ContentPlaceHolder1_Panel1_PopupReadmore"}, null, null, $get("ctl00_ContentPlaceHolder1_Panel1_PopReadmoreBtn"));
+});
+Sys.Application.add_init(function() {
+    $create(AjaxControlToolkit.ModalPopupBehavior, {"BackgroundCssClass":"modalBackground","Drag":true,"PopupControlID":"ctl00_ContentPlaceHolder1_Panel1_Panel_catfifthlevel","dynamicServicePath":"/Career/life-at-clover.aspx","id":"ctl00_ContentPlaceHolder1_Panel1_MPE_catfifthlevel"}, null, null, $get("ctl00_ContentPlaceHolder1_Panel1_btn_catfifthlevel"));
+});
+Sys.Application.add_init(function() {
+    $create(AjaxControlToolkit.ModalPopupBehavior, {"BackgroundCssClass":"modalBackground","Drag":true,"PopupControlID":"ctl00_ContentPlaceHolder1_Panel1_PanelResume","dynamicServicePath":"/Career/life-at-clover.aspx","id":"ctl00_ContentPlaceHolder1_Panel1_ResumePopup"}, null, null, $get("ctl00_ContentPlaceHolder1_Panel1_ResumepopupBtn"));
+});
+Sys.Application.add_init(function() {
+    $create(AjaxControlToolkit.ModalPopupBehavior, {"BackgroundCssClass":"modalBackground","Drag":true,"PopupControlID":"ctl00_PanelReadMore","dynamicServicePath":"/Career/life-at-clover.aspx","id":"ctl00_PopupReadmore"}, null, null, $get("ctl00_PopReadmoreBtn"));
+});
+Sys.Application.add_init(function() {
+    $create(AjaxControlToolkit.ModalPopupBehavior, {"BackgroundCssClass":"modalBackground","Drag":true,"PopupControlID":"ctl00_Panel1","dynamicServicePath":"/Career/life-at-clover.aspx","id":"ctl00_ModalPopupExtender1"}, null, null, $get("ctl00_Button1"));
+});
+//]]>
+</script>
+</form>
+</body>
+<script>
+    $(".cpopcloser").click(function () {
+        $(".cpopupdiv").hide();
+    });
+	
+</script>
+<script>
+
+    $("input.fader").blur(function () {
+        if ($(this).attr("title") == $(this).attr("value")) {
+            $(this).val($(this).attr("title"));
+        }
+
+        if ($(this).val() == '') {
+            $(this).val($(this).attr("title"));
+        }
+
+    });
+    $("textarea.fader").click(function () {
+        if ($(this).attr("title") == $(this).attr("value")) {
+            $(this).val("");
+        }
+    });
+
+    $("textarea.fader").blur(function () {
+        if ($(this).attr("title") == $(this).attr("value")) {
+            $(this).val($(this).attr("title"));
+        }
+
+        if ($(this).val() == '') {
+            $(this).val($(this).attr("title"));
+        }
+    });
+
+    $("input.fader").click(function () {
+        if ($(this).attr("title") == $(this).attr("value")) {
+            $(this).val("");
+        }
+    });
+
+</script>
+<script type="text/javascript" language="javascript">
+    function OnOptionChanged(id) {
+        alert(id);
+    }
+
+</script>
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-26177651-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+<style type="text/css">
+    .ComboClass
+    {
+        float: left;
+        margin-top: 5px;
+        line-height: 18px;
+    }
+</style>
+
+
+</html>
